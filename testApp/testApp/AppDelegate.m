@@ -16,7 +16,24 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    
+    //Variables
+    // bool finish = YES;
+    // char strike = 'x';
+    float gameAvg = 237.33;
+    int series = 712;
+    
+    NSLog(@"My name is Rich, and I bowled a %d last night during leauge. I averaged a %.2f for the night.", series, gameAvg);
+    
+    
+    
+    
     return YES;
+    
+   
+    
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
