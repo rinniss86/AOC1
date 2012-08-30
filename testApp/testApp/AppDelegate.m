@@ -19,12 +19,33 @@
     
     
     //Variables
-    // bool finish = YES;
-    // char strike = 'x';
+    bool finish = YES;
+    char strike = 'x';
     float gameAvg = 237.33;
     int series = 712;
+    unsigned int games = 3;
+    unsigned int frames = 10;
     
+    
+    //Casting Float through NSLog
     NSLog(@"My name is Rich, and I bowled a %d last night during leauge. I averaged a %.2f for the night.", series, gameAvg);
+    
+    //Loop for how many games have been completed
+    
+    for (games = 3; games <= 3; games++){
+        //Loop for how many completed frames
+        for (frames = 10; frames <= 10; frames++){
+            if (frames <= 10){
+                NSLog(@"%d Frames are done. On to the next game", frames);
+            }
+        else if (frames == 10) {
+            NSLog(@"If %d frames is over. Start next game", frames);
+            }
+        }
+            NSLog(@" %d games have been completed. Series Over.", games);
+        
+        
+    }
     
     
     
