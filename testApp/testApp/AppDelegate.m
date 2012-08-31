@@ -21,11 +21,12 @@
     //Variables
     bool finish = YES;
     bool notFinished = NO;
-    char strike = 'x';
+    char strike = 'X';
     float gameAvg = 237.33;
     int series = 712;
     unsigned int games = 3;
     unsigned int frames = 10;
+    unsigned int cSeries = 1;
     
     
     //Casting Float through NSLog
@@ -63,8 +64,15 @@
     }
     
     //Conditionals
+    if(cSeries == 1 && finish == YES){
+        NSLog(@"I completed %d series this year.", cSeries);
+    }
+    else if(cSeries < 1 && notFinished == NO){
+        NSLog(@"I have not completed %d series this year.", cSeries);
+    }
     
-    
+    //char usage
+    NSLog(@"After reviewing my score card, I had a lot more %c s than open frames and spares", strike);
     
     return YES;
     
