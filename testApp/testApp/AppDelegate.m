@@ -20,6 +20,7 @@
     
     //Variables
     bool finish = YES;
+    bool notFinished = NO;
     char strike = 'x';
     float gameAvg = 237.33;
     int series = 712;
@@ -47,6 +48,21 @@
         
     }
     
+    // Loops through how many frames are left in the game.
+    
+    while (frames > 0){
+        if (frames % 1 == 0){
+            NSLog(@"There is only %d frames left in the game", frames);
+        }
+        // Alert for last frame
+        else if (frames > 2) {
+            NSLog(@"It's down to the last frame! the %d th frame", frames);
+            break;
+        }
+        frames--;
+    }
+    
+    //Conditionals
     
     
     
