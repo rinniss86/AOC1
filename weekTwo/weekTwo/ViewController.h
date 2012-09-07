@@ -17,6 +17,15 @@
     UILabel *label5;
     UILabel *label6;
     UILabel *label7;
+    UILabel *iList;
+    UILabel *iText;
+    NSString *item1;
+    NSString *item2;
+    NSString *item3;
+    NSString *item4;
+    NSString *item5;
+    NSArray *iArray;
+    NSMutableString *itemText;
     
 }
 

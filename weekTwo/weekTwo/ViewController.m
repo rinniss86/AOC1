@@ -89,7 +89,7 @@
     [self.view addSubview:label6];
     
     //Summary
-    label7 = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 155.0f, 300.0f, 160.0f)];
+    label7 = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 130.0f, 300.0f, 160.0f)];
     if (label6 !=nil)
     {
         label7.textColor = [UIColor colorWithRed:0.2 green:1 blue:0.2 alpha:1]; /*#33ff33*/
@@ -101,7 +101,52 @@
     }
     [self.view addSubview:label7];
     
+    //Array Items
+    item1 = [[NSString alloc] initWithString:@"Albums"];
+    item2 = [[NSString alloc] initWithString:@"Apps"];
+    item3 = [[NSString alloc] initWithString:@"Camera"];
+    item4 = [[NSString alloc] initWithString:@"Gear"];
+    item5 = [[NSString alloc] initWithString:@"Community"];
     
+    //Array Creation
+    iArray = [NSArray arrayWithObjects:item1, item2, item3, item4, item5, nil];
+    NSLog(@"%@", [iArray description]);
+    
+    //Create NSMutableString variable and allocate it. Loop through array
+    itemText = [[NSMutableString alloc] initWithCapacity:5];
+    
+    for (int i = 0; i < iArray.count; i++)
+    {
+        [itemText appendString:[iArray objectAtIndex: i]];
+        if (i < iArray.count -1)
+        {
+            [itemText appendString:@", "];
+        }
+    }
+    
+    //Create label with text "List of Items"
+    iList = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 300.0f, 100.0f, 20.0f)];
+    if (iList != nil)
+    {
+        iList.textColor = [UIColor colorWithRed:1 green:0 blue:1 alpha:1]; /*#ff00ff*/
+        iList.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0.4 alpha:1]; /*#000066*/
+        iList.text = @"List of Items:";
+        iList.textAlignment = UITextAlignmentLeft;
+    }
+    [self.view addSubview:iList];
+    
+    //Create another label beneath and set the text to the NSMutableString text.
+    iText = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 330.0f, 300.0f, 60.0f)];
+    if (iText != nil)
+    {
+        iText.textColor = [UIColor colorWithRed:0.294 green:0.741 blue:0.98 alpha:1]; /*#4bbdfa*/
+        iText.backgroundColor = [UIColor colorWithRed:0.18 green:0.004 blue:0.165 alpha:1]; /*#2e012a*/
+        iText.text = itemText;
+        iText.textAlignment = UITextAlignmentCenter;
+        iText.numberOfLines = 6;
+        
+    }
+    [self.view addSubview:iText];
 
     
     [super viewDidLoad];
