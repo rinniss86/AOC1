@@ -29,7 +29,7 @@
     [self.view addSubview:label1];
     
     //Create label for "Author"
-    label2 = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 40.0f, 145.0f, 20.0f)];
+    label2 = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 40.0f, 60.0f, 20.0f)];
     if (label2 !=nil)
     {
         label2.textColor = [UIColor cyanColor];
@@ -41,7 +41,7 @@
     [self.view addSubview:label2];
     
     //Create label for author name
-    label3 = [[UILabel alloc] initWithFrame:CGRectMake(155.0f, 40.0f, 155.0f, 20.0f)];
+    label3 = [[UILabel alloc] initWithFrame:CGRectMake(70.0f, 40.0f, 245.0f, 20.0f)];
     if (label3 !=nil)
     {
         label3.textColor = [UIColor blackColor];
@@ -53,7 +53,7 @@
     [self.view addSubview:label3];
     
     //Create label for "Published"
-    label4 = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 70.0f, 145.0f, 20.0f)];
+    label4 = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 70.0f, 80.0f, 20.0f)];
     if (label4 !=nil)
     {
         label4.textColor = [UIColor colorWithRed:1 green:1 blue:0 alpha:1]; /*#ffff00*/
@@ -65,7 +65,7 @@
     [self.view addSubview:label4];
     
     //Create label for published date
-    label5 = [[UILabel alloc] initWithFrame:CGRectMake(155.0f, 70.0f, 155.0f, 20.0f)];
+    label5 = [[UILabel alloc] initWithFrame:CGRectMake(90.0f, 70.0f, 220.0f, 20.0f)];
     if (label5 !=nil)
     {
         label5.textColor = [UIColor colorWithRed:0.8 green:0.6 blue:0 alpha:1]; /*#cc9900*/
