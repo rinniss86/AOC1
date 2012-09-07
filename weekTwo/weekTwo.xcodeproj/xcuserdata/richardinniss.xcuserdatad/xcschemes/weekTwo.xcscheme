@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9D14083515F833D600A8D334"
+               BlueprintIdentifier = "9D3B98E015F988FD00373277"
                BuildableName = "weekTwo.app"
                BlueprintName = "weekTwo"
                ReferencedContainer = "container:weekTwo.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9D14085015F833D600A8D334"
+               BlueprintIdentifier = "9D3B990115F988FD00373277"
                BuildableName = "weekTwoTests.octest"
                BlueprintName = "weekTwoTests"
                ReferencedContainer = "container:weekTwo.xcodeproj">
@@ -42,7 +42,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9D14083515F833D600A8D334"
+            BlueprintIdentifier = "9D3B98E015F988FD00373277"
             BuildableName = "weekTwo.app"
             BlueprintName = "weekTwo"
             ReferencedContainer = "container:weekTwo.xcodeproj">
@@ -61,7 +61,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9D14083515F833D600A8D334"
+            BlueprintIdentifier = "9D3B98E015F988FD00373277"
             BuildableName = "weekTwo.app"
             BlueprintName = "weekTwo"
             ReferencedContainer = "container:weekTwo.xcodeproj">
@@ -79,7 +79,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9D14083515F833D600A8D334"
+            BlueprintIdentifier = "9D3B98E015F988FD00373277"
             BuildableName = "weekTwo.app"
             BlueprintName = "weekTwo"
             ReferencedContainer = "container:weekTwo.xcodeproj">
