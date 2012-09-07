@@ -23,7 +23,7 @@
     {
         label1.textColor = [UIColor whiteColor];
         label1.backgroundColor = [UIColor blackColor];
-        label1.text = @"Big World Little Lense";
+        label1.text = @"Big World Little Lens";
         label1.textAlignment = UITextAlignmentCenter;
     }
     [self.view addSubview:label1];
