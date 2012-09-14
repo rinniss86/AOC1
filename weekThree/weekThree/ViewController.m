@@ -27,34 +27,28 @@
     NSInteger num1NSInterger = 13;
     NSInteger num2NSInterger = 38;
     
-    //First part of append function to show alert
-    NSString *beginString = [[NSString alloc] initWIthString:@"Number:"];
-    
     //Add function call
-    int sumValue = [self add:num1 second:num2];
+    int sumValue = [self add:(int)num1 second:(int)num2];
     
-    //Convert sumValue from int to NSNumber - > String
-    NSNumber *newValueFromSum = [[NSNumber alloc] initWithInt:sumValue];
-    NSString *bundleString = [[NSString alloc] initWithFormat:@"%@ %@", beginString, newValueFromSum];
+    //Bundle returned integer -->NSNumber convert --> NSString -->Display in Alert
+    NSNumber *numSum = [[NSNumber alloc] initWithInt:sumValue];
+    NSString *numString = [NSString stringWithFormat:@"Number is:"];
+    NSString *numToString = [numSum stringValue];
+    NSString *sumString = [self append:numString with:numToString];
+    [self displayAlertWithString:sumString];
     
-    //Mutable string outcome
-    NSMutableString *outCome = [[NSMutableString alloc] initWithFormat:@"Result of %i and %i being equal is ", num1NSInterger, num2NSInterger];
+   
+    
     
     //Compare True -> Append String False -> Do not
-    if ([self compare:num1NSInterger secondNumber:num2NSInterger] == TRUE)
-    {
-        [outCome appendString:@"true"];
-    }
-    else{
-        [outCome appendString:@"false"];
-    }
+    BOOL compareNum = [self compare:num1NSInterger with:num2NSInterger];
+    NSString *compareString = [NSString stringWithFormat:@"Are numbers %d and %d equal? %@", num1NSInterger, num2NSInterger, compareNum?@"YES" : @"NO"];
+    [self displayAlertWithString:compareString];
     
+    //Call append function with 2 NSStrings. Display in Alert
+    NSString *stringLine = [self append:@"Scuba " with:@"Steve"];
+    [self displayAlertWithString:stringLine];
     
-    //End string to displayAlertWithString function
-    NSString *endString = [[NSString alloc] initWithFormat:@"%@ %@", bundleString, outCome];
-    
-    //End
-    [self displayAlertWithString:endString];
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
@@ -80,20 +74,18 @@
 }
 
 //Append Function
--(NSString*)append:(NSString*)firstString second:(NSString*)second
+-(NSString*)append:(NSString*)firstString second:(NSString*)secondString
 {
-    NSMutableString *mutableStringLine = [[NSMutableString alloc] initWithString:firstString];
-    if (mutableStringLine != nil)
-    {
-        [mutableStringLine appendString:second];
-    }
+    NSMutableString *mutableStringLine = [NSMutableString stringWithString:firstString];
+    NSString *string = [mutableStringLine stringByAppendingString:secondString];
     
-    return mutableStringLine;
+    return string;
 }
 
 -(void)displayAlertWithString:(NSString *)string
 {
-    UIAlertView *newAlert = [[UIAlertView alloc] initWithTitle:@"Text Box" message: string delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+    UIAlertView *newAlert = [[UIAlertView alloc] initWithTitle:@"Alert Window" message: string delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+    [newAlert show];
 }
 
 - (void)viewDidUnload
