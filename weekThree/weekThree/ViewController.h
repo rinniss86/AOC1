@@ -9,9 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
+{
+    
+}
 
 -(int)add:(int)first second:(int)second;
--(BOOL)compare:(NSInteger)num1NSInterger with:(NSInteger)num2NSInterger;
+-(BOOL)compare:(NSInteger)firstNumber secondNumber:(NSInteger)secondNumber;
 -(NSString*)append:(NSString*)firstString with:(NSString*)secondString;
 -(void)displayAlertWithString:(NSString*)string;
 

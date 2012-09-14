@@ -17,7 +17,7 @@
 - (void)viewDidLoad
 {
     
-//Start
+    //Start
     
     //Variables
     
@@ -27,26 +27,20 @@
     NSInteger num1NSInterger = 13;
     NSInteger num2NSInterger = 38;
     
-    //Add function call
-    int sumValue = [self add:(int)num1 second:(int)num2];
-    
     //Bundle returned integer -->NSNumber convert --> NSString -->Display in Alert
-    NSNumber *numSum = [[NSNumber alloc] initWithInt:sumValue];
-    NSString *numString = [NSString stringWithFormat:@"Number is:"];
-    NSString *numToString = [numSum stringValue];
-    NSString *sumString = [self append:numString with:numToString];
-    [self displayAlertWithString:sumString];
+    NSNumber *numSum = [[NSNumber alloc] initWithInt:[self add:num1 second:num2]];
+    NSString *convertNumber = [[NSString alloc] initWithFormat:@"The number is %@",[numSum stringValue]];
+    [self displayAlertWithString: convertNumber];
     
-   
     
     
     //Compare True -> Append String False -> Do not
-    BOOL compareNum = [self compare:num1NSInterger with:num2NSInterger];
-    NSString *compareString = [NSString stringWithFormat:@"Are numbers %d and %d equal? %@", num1NSInterger, num2NSInterger, compareNum?@"YES" : @"NO"];
+    BOOL compareNum = [self compare:num1NSInterger secondNumber:num2NSInterger];
+    NSString *compareString = [[NSString alloc ]initWithFormat:@"Are numbers %d and %d equal? %@", num1NSInterger, num2NSInterger, compareNum?@"YES" : @"NO"];
     [self displayAlertWithString:compareString];
     
     //Call append function with 2 NSStrings. Display in Alert
-    NSString *stringLine = [self append:@"Scuba " with:@"Steve"];
+    NSString *stringLine = [self append:@"Rich" second:@"Inniss"];
     [self displayAlertWithString:stringLine];
     
     
@@ -76,10 +70,8 @@
 //Append Function
 -(NSString*)append:(NSString*)firstString second:(NSString*)secondString
 {
-    NSMutableString *mutableStringLine = [NSMutableString stringWithString:firstString];
-    NSString *string = [mutableStringLine stringByAppendingString:secondString];
-    
-    return string;
+    NSMutableString *combined = [[NSMutableString alloc] initWithFormat:@"%@ %@", firstString, secondString];
+    return combined;
 }
 
 -(void)displayAlertWithString:(NSString *)string
