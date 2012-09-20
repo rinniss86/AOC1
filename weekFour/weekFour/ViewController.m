@@ -42,14 +42,15 @@
     
     //Login Button
     
-    button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    if (button != nil)
+    loginButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    if (loginButton != nil)
     {
-        button.frame = CGRectMake(110.0f, 65.0f, 100.0f, 50.0f);
-        button.tintColor = [UIColor colorWithRed:0.376 green:0.431 blue:0.769 alpha:1]; /*#606ec4*/
-        [button setTitle:@"Login" forState:UIControlStateNormal];
-        [button addTarget:self action:@selector(onClick) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:button];
+        loginButton.frame = CGRectMake(110.0f, 65.0f, 100.0f, 50.0f);
+        loginButton.tag = 0;
+        loginButton.tintColor = [UIColor colorWithRed:0.376 green:0.431 blue:0.769 alpha:1]; /*#606ec4*/
+        [loginButton setTitle:@"Login" forState:UIControlStateNormal];
+        [loginButton addTarget:self action:@selector(onClick:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:loginButton];
     }
     
     //"Enter User Name " Label (directLabel)
@@ -71,20 +72,35 @@
     if (dateButton != nil)
     {
         dateButton.frame = CGRectMake(110.0f, 200.0f, 100.0f, 50.0f);
+        dateButton.tag = 1;
         dateButton.tintColor = [UIColor colorWithRed:0.376 green:0.431 blue:0.769 alpha:1]; /*#606ec4*/
         [dateButton setTitle:@"Date" forState:UIControlStateNormal];
-        [dateButton addTarget:self action:@selector(onClick) forControlEvents:UIControlEventTouchUpInside];
+        [dateButton addTarget:self action:@selector(onClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:dateButton];
     }
 
-    //Infro Button
+    //Info Button
     infoButton = [UIButton buttonWithType:UIButtonTypeInfoDark];
     if (infoButton != nil)
     {
-        infoButton.frame = CGRectMake(20.0f, 390.0f, 20.0f, 20.0f);
-        [infoButton addTarget:self action:@selector(onClick)  forControlEvents:UIControlEventTouchDragInside];
+        infoButton.frame = CGRectMake(20.0f, 300.0f, 20.0f, 20.0f);
+        infoButton.tag =2;
+        [infoButton addTarget:self action:@selector(onClick:)  forControlEvents:UIControlEventTouchDragInside];
         [self.view addSubview:infoButton];
     }
+    
+    //Display Info Label
+    infoDisplay = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 390.0f, 300.0f, 60.0f)];
+    if (infoDisplay != nil)
+    {
+        infoDisplay.text = @"";
+        infoDisplay.textAlignment = UITextAlignmentCenter;
+        infoDisplay.numberOfLines = 2;
+        infoDisplay.textColor = [UIColor lightGrayColor];
+        [self.view addSubview:infoDisplay];
+    }
+    
+ 
     
     [super viewDidLoad];
     
@@ -92,10 +108,47 @@
 	// Do any additional setup after loading the view, typically from a nib.
 }
 //onClick function
--(void)onClick
+- (void)onClick:(UIButton*)button;
 {
-    NSString *userText = [userField text];
-    
+    //Switch to handle button clicks. For all 3 buttons
+    switch (button.tag) {
+        case 0:
+        {
+            
+            NSString *userText = [userField text];
+            if (userText.length == 0){
+                directLabel.text = @"Username cannot be empty";
+            } else {
+                NSString *loggedText = [[NSString alloc]initWithFormat:@"User: %@ has been logged in", [userField text]];
+                directLabel.text = loggedText;
+            }
+        }
+            break;
+        case 1:
+        {
+            
+            NSDate *date = [NSDate date];
+            NSDateFormatter *formattedDate = [[NSDateFormatter alloc]init];
+            [formattedDate setDateStyle:NSDateFormatterLongStyle];
+            [formattedDate setTimeStyle:NSDateFormatterFullStyle];
+            UIAlertView *dateAlert = [[UIAlertView alloc]initWithTitle:@"Date" message:[formattedDate stringFromDate:date] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [dateAlert show];
+        }
+            break;
+        case 2:
+        {
+            
+            infoDisplay.text = @"This application was created by: Rich Inniss";
+            infoDisplay.backgroundColor = [UIColor darkGrayColor];
+        }
+            break;
+            
+        default:
+        {
+            
+        }
+            break;
+    }
 }
 
 - (void)viewDidUnload

@@ -12,11 +12,14 @@
 {
     UILabel *userLabel;
     UITextField *userField;
-    UIButton *button;
+    UIButton *loginButton;
     UIButton *dateButton;
     UIButton *infoButton;
     UILabel *directLabel;
+    UILabel *infoDisplay;
+   // NSDate *date;
+    NSDateFormatter *dateFormat;
    
 }
--(void)onClick;
+-(void)onClick:(UIButton*)button;
 @end
