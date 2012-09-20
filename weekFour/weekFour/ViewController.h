@@ -13,6 +13,9 @@
     UILabel *userLabel;
     UITextField *userField;
     UIButton *button;
+    UIButton *dateButton;
+    UIButton *infoButton;
+    UILabel *directLabel;
    
 }
 -(void)onClick;
