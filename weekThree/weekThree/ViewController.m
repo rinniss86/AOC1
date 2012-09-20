@@ -40,7 +40,7 @@
     [self displayAlertWithString:compareString];
     
     //Call append function with 2 NSStrings. Display in Alert
-    NSString *stringLine = [self append:@"Rich" second:@"Inniss"];
+    NSString *stringLine = [self append:@"Rich" with:@"Inniss"];
     [self displayAlertWithString:stringLine];
     
     
@@ -68,7 +68,7 @@
 }
 
 //Append Function
--(NSString*)append:(NSString*)firstString second:(NSString*)secondString
+-(NSString*)append:(NSString*)firstString with:(NSString*)secondString
 {
     NSMutableString *combined = [[NSMutableString alloc] initWithFormat:@"%@ %@", firstString, secondString];
     return combined;
